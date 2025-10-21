@@ -151,9 +151,7 @@ npm run type-check   # Verificação de tipos
 ### Para Administradores
 
 - Gerenciamento de conteúdo via Prismic
-- Visualização de pedidos
-- Controle de produtos
-- Estatísticas de vendas
+
 
 ## Banco de Dados
 
