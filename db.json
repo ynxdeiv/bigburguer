@@ -1,0 +1,196 @@
+{
+  "products": [
+    {
+      "id": "1",
+      "name": "Classic Burger",
+      "description": "Hambúrguer tradicional com carne bovina, queijo, alface, tomate e molho especial.",
+      "price": 22.99,
+      "image": "/1.webp",
+      "available": 15
+    },
+    {
+      "id": "2",
+      "name": "Cheddar Bacon",
+      "description": "Hambúrguer com cheddar cremoso, bacon crocante e cebola caramelizada.",
+      "price": 26.59,
+      "image": "/2.webp",
+      "available": 4
+    },
+    {
+      "id": "3",
+      "name": "Batata Frita",
+      "description": "Porção de batatas fritas crocantes, servidas com ketchup.",
+      "price": 12.99,
+      "image": "/3.webp",
+      "available": 25
+    },
+    {
+      "id": "4",
+      "name": "Classic Salada Burger",
+      "description": "Hamburguer clássico com queijo, alface, tomate e molho especial.",
+      "price": 29.91,
+      "image": "/4.webp",
+      "available": 8
+    }
+  ],
+  "cart": [
+    {
+      "id": "2",
+      "name": "Cheddar Bacon",
+      "price": 26.59,
+      "image": "/2.webp",
+      "quantity": 7
+    }
+  ],
+  "orders": [
+    {
+      "id": "ORDER-1761070452547",
+      "items": [
+        {
+          "id": "2",
+          "name": "Cheddar Bacon",
+          "price": 26.59,
+          "image": "/2.webp",
+          "quantity": 4
+        }
+      ],
+      "total": 106.36,
+      "paymentMethod": "boleto",
+      "status": "completed",
+      "createdAt": "2025-10-21T18:14:12.547Z"
+    },
+    {
+      "id": "ORDER-1761071436010",
+      "items": [
+        {
+          "id": "4",
+          "name": "Classic Salada Burger",
+          "price": 29.91,
+          "image": "/4.webp",
+          "quantity": 1
+        }
+      ],
+      "total": 29.91,
+      "paymentMethod": "credit",
+      "status": "completed",
+      "createdAt": "2025-10-21T18:30:36.010Z"
+    },
+    {
+      "id": "ORDER-1761071503916",
+      "items": [
+        {
+          "id": "4",
+          "name": "Classic Salada Burger",
+          "price": 29.91,
+          "image": "/4.webp",
+          "quantity": 1
+        }
+      ],
+      "total": 29.91,
+      "paymentMethod": "credit",
+      "status": "completed",
+      "createdAt": "2025-10-21T18:31:43.916Z"
+    },
+    {
+      "id": "ORDER-1761072920620",
+      "items": [
+        {
+          "id": "2",
+          "name": "Cheddar Bacon",
+          "price": 26.59,
+          "image": "/2.webp",
+          "quantity": 12
+        }
+      ],
+      "total": 319.08,
+      "paymentMethod": "boleto",
+      "status": "completed",
+      "createdAt": "2025-10-21T18:55:20.620Z"
+    },
+    {
+      "id": "ORDER-1761073241817",
+      "items": [
+        {
+          "id": "2",
+          "name": "Cheddar Bacon",
+          "price": 26.59,
+          "image": "/2.webp",
+          "quantity": 3
+        }
+      ],
+      "total": 79.77,
+      "paymentMethod": "boleto",
+      "status": "completed",
+      "createdAt": "2025-10-21T19:00:41.817Z"
+    },
+    {
+      "id": "ORDER-1761076894528",
+      "items": [
+        {
+          "id": "3",
+          "name": "Batata Frita",
+          "price": 12.99,
+          "image": "/3.webp",
+          "quantity": 3
+        }
+      ],
+      "total": 38.97,
+      "paymentMethod": "pix",
+      "status": "completed",
+      "createdAt": "2025-10-21T20:01:34.528Z"
+    }
+  ],
+  "contacts": [
+    {
+      "id": "aa53",
+      "name": "ttes",
+      "email": "deivid@hotmail.com",
+      "message": "testeetes1",
+      "createdAt": "2025-10-21T11:41:25.655Z"
+    },
+    {
+      "id": "d2a0",
+      "name": "teste",
+      "email": "deivid652015@hotmail.com",
+      "message": "teste1234t",
+      "createdAt": "2025-10-21T12:07:11.359Z"
+    },
+    {
+      "id": "rs74",
+      "name": "Deivid Costa dos Santos",
+      "email": "deivid652015@hotmail.com",
+      "message": "12345",
+      "createdAt": "2025-10-21T18:58:38.689Z"
+    },
+    {
+      "id": "llhy",
+      "name": "Deivid Costa dos Santos",
+      "email": "deivid652015@hotmail.com",
+      "message": "1234567",
+      "createdAt": "2025-10-21T19:00:17.853Z"
+    },
+    {
+      "id": "c6om",
+      "name": "123",
+      "email": "deivid652015@hotmail.com",
+      "message": "abc123\n23132",
+      "createdAt": "2025-10-21T20:09:22.567Z"
+    },
+    {
+      "id": "7b23",
+      "name": "1223",
+      "email": "deivid652015@hotmail.com",
+      "message": "qweqwewqedw123",
+      "createdAt": "2025-10-21T22:04:57.381Z"
+    }
+  ],
+  "users": [
+    {
+      "id": "1",
+      "email": "colmeia@email.com",
+      "password": "123456",
+      "name": "João Cliente",
+      "phone": "(11) 99999-9999"
+    }
+  ]
+}
