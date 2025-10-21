@@ -1,36 +1,201 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Big Burguer - Pedidos Hambúrgueres
 
-## Getting Started
+Sistema completo de pedidos de hambúrgueres desenvolvido com Next.js, Prismic CMS e arquitetura atomic design.
 
-First, run the development server:
+## Como Rodar o Projeto
+
+### Pré-requisitos
+
+- Node.js 18+
+- npm ou yarn
+- Conta no Prismic CMS
+
+### 1. Instalação das Dependências
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### 2. Configuração do Banco de Dados Local
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+O projeto utiliza um banco de dados JSON local para simular uma API. Para rodar:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+# Instalar json-server globalmente (se não tiver)
+npm install -g json-server
 
-## Learn More
+# Rodar o banco na porta 3002
+json-server --watch db.json --port 3002
 
-To learn more about Next.js, take a look at the following resources:
+# OU usar o script do projeto
+npm run json-server
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+O banco ficará disponível em: `http://localhost:3002`
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+**⚠️ IMPORTANTE:** O servidor JSON deve estar rodando para que o carousel de produtos funcione corretamente!
 
-## Deploy on Vercel
+### 3. Configuração do Prismic CMS
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+#### Acesso ao Prismic
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- **Email:** testecolmeiaprismic@gmail.com
+- **Senha:** Testecolmeia123@
+- **URL:** https://bigburguer.prismic.io
+
+#### Rodando o Slice Machine
+
+```bash
+# Iniciar o Slice Machine
+npx slice-machine
+
+# O Slice Machine ficará disponível em: http://localhost:9999
+```
+
+### 4. Executando o Projeto
+
+```bash
+# Rodar em modo desenvolvimento
+npm run dev
+
+# O projeto ficará disponível em: http://localhost:3000
+```
+
+## Arquitetura do Sistema
+
+### Estrutura de Componentes (Atomic Design)
+
+```
+src/components/atomic/
+├── atoms/           # Componentes básicos (Button, Input, etc.)
+├── molecules/       # Combinação de atoms (CartItem, FormField, etc.)
+├── organisms/       # Componentes complexos (Header, CartModal, etc.)
+└── templates/       # Layouts de página (PageLayout, CheckoutPage, etc.)
+```
+
+### Principais Funcionalidades
+
+1. **Sistema de Autenticação**
+   - Login/Registro de usuários
+   - Context API para gerenciamento de estado
+   - Middleware de autenticação
+
+2. **Carrinho de Compras**
+   - Adicionar/remover produtos
+   - Controle de quantidade
+   - Persistência local
+   - Modal de carrinho
+
+3. **Sistema de Pedidos**
+   - Checkout completo
+   - Formulário de pagamento
+   - Integração com Google Maps
+   - Histórico de pedidos
+
+4. **CMS com Prismic**
+   - Gerenciamento de conteúdo do hero
+   - Slice Machine para desenvolvimento
+   - Preview de conteúdo
+
+5. **Banco de Dados Local**
+   - Simulação de API REST
+   - Dados de produtos, usuários e pedidos
+   - Endpoints para CRUD completo
+
+### Tecnologias Utilizadas
+
+- **Frontend:** Next.js 14, React, TypeScript
+- **Styling:** Tailwind CSS
+- **CMS:** Prismic
+- **Banco Local:** JSON Server
+- **Estado:** Context API + React Query
+- **Mapas:** Google Maps API
+- **Validação:** Zod
+
+### Estrutura de Pastas
+
+```
+src/
+├── api/              # Endpoints da API
+├── app/              # Páginas do Next.js
+├── components/       # Componentes organizados por atomic design
+├── contexts/         # Contextos React
+├── hooks/            # Custom hooks
+├── lib/              # Configurações e utilitários
+├── providers/        # Providers React
+├── schemas/          # Schemas de validação
+├── services/         # Serviços de API
+└── types/            # Definições de tipos TypeScript
+```
+
+## Scripts Disponíveis
+
+```bash
+npm run dev          # Desenvolvimento
+npm run build        # Build de produção
+npm run start        # Executar build de produção
+npm run lint         # Linter
+npm run type-check   # Verificação de tipos
+```
+
+## Funcionalidades do Sistema
+
+### Para Usuários
+
+- Navegação por produtos
+- Adição ao carrinho
+- Processo de checkout
+- Acompanhamento de pedidos
+- Sistema de login/registro
+
+### Para Administradores
+
+- Gerenciamento de conteúdo via Prismic
+- Visualização de pedidos
+- Controle de produtos
+- Estatísticas de vendas
+
+## Banco de Dados
+
+O arquivo `db.json` contém:
+
+- **produtos:** Catálogo de hambúrgueres
+- **usuarios:** Dados de login
+- **pedidos:** Histórico de compras
+- **contatos:** Mensagens de contato
+
+### Endpoints da API Local
+
+```
+GET    /produtos      # Listar produtos
+GET    /usuarios      # Listar usuários
+GET    /pedidos       # Listar pedidos
+POST   /pedidos       # Criar pedido
+PUT    /pedidos/:id   # Atualizar pedido
+```
+
+## Customização
+
+### Temas
+
+O sistema suporta modo claro/escuro com toggle automático.
+
+### Componentes
+
+Todos os componentes seguem o padrão atomic design e podem ser facilmente customizados via Tailwind CSS.
+
+## Troubleshooting
+
+### Problemas Comuns
+
+1. **Erro de conexão com Prismic**
+   - Verificar credenciais
+   - Confirmar acesso ao repositório
+
+2. **Banco JSON não responde**
+   - Verificar se está rodando na porta 3001
+   - Confirmar arquivo db.json existe
+
+3. **Slice Machine não inicia**
+   - Verificar conexão com internet
+   - Confirmar permissões do Prismic
